@@ -1,0 +1,19 @@
+services:
+  task-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: task-manager:latest
+    container_name: task-manager
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000/login"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
