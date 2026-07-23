@@ -107,4 +107,3 @@ demonstrate frontend architecture, state management, and UX patterns:
   and persists all CRUD/move operations to `localStorage`.
 - Both simulate network latency so loading states, optimistic updates, and
   error handling all behave the way they would against a real API.
-
